@@ -1,6 +1,6 @@
-import '@/styles/globals.css';
-import Layout from '@/components/Layout';
-import { Inter, Poppins } from '@next/font/google';
+import '../styles/globals.css';
+import Layout from '../components/Layout';
+import { Inter, Poppins } from 'next/font/google';
 import { AnimatePresence } from 'framer-motion';
 
 const inter = Inter({

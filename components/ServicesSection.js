@@ -1,37 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-
-// Placeholder for ServiceItem - this component would be in its own file: ServiceItem.js
-// For now, we define its expected structure and render it directly here for completeness of ServicesSection.
-const ServiceItem = ({ icon, title, microcopy, index }) => {
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: index * 0.15, // Staggered delay
-        duration: 0.5,
-        ease: 'easeOut',
-      },
-    },
-  };
-
-  return (
-    <motion.div 
-      variants={itemVariants}
-      className="bg-neutral-DEFAULT p-6 rounded-lg shadow-lg text-center flex flex-col items-center h-full hover:shadow-xl transition-shadow duration-300"
-    >
-      <div className="w-16 h-16 mb-4 relative text-primary">
-        {/* In a real ServiceItem, you might load SVG content directly or use a more robust icon system */}
-        <Image src={icon} alt={`${title} icon`} layout="fill" objectFit="contain" />
-      </div>
-      <h3 className="font-heading text-xl font-semibold text-primary mb-2">{title}</h3>
-      <p className="text-neutral-text text-sm leading-relaxed flex-grow">{microcopy}</p>
-    </motion.div>
-  );
-};
+// Image import removed as it's used in ServiceItem, not directly here
+import ServiceItem from './ServiceItem';
 
 const servicesData = [
   {
@@ -72,16 +42,16 @@ const ServicesSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Child items will stagger in
+        staggerChildren: 0.15, // Adjusted stagger to match original intent if ServiceItem used index * 0.15
       },
     },
   };
 
   return (
-    <section id="services" className="py-20 px-4 md:px-8 bg-neutral-DEFAULT text-neutral-text">
+    <section id="services" className="py-20 px-4 md:px-8 bg-hueneu-neutral-lightest text-hueneu-neutral-dark">
       <div className="max-w-5xl mx-auto">
         <motion.h2 
-          className="font-heading text-4xl md:text-5xl font-semibold text-primary text-center mb-12 md:mb-16"
+          className="font-poppins text-4xl md:text-5xl font-semibold text-hueneu-primary text-center mb-12 md:mb-16"
           initial={{ opacity:0, y: 20 }}
           whileInView={{ opacity:1, y: 0}}
           viewport={{ once: true, amount: 0.3 }}
@@ -96,13 +66,14 @@ const ServicesSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
         >
-          {servicesData.map((service, index) => (
+          {servicesData.map((service) => (
             <ServiceItem
-              key={service.title}
+              key={service.title} // Use a unique key like title or index
               icon={service.icon}
               title={service.title}
               microcopy={service.microcopy}
-              index={index} // Pass index for staggered animation
+              // index prop is not used by the standalone ServiceItem for its variants unless modified
+              // Staggering is handled by parent's staggerChildren
             />
           ))}
         </motion.div>

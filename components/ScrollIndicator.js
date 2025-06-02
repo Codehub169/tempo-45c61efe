@@ -18,14 +18,17 @@ const ScrollIndicator = () => {
       className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer group"
       onClick={handleScroll}
       aria-label="Scroll down to learn more"
+      role="button"
+      tabIndex={0}
+      onKeyPress={(e) => e.key === 'Enter' && handleScroll()}
     >
       <motion.div
-        className="w-8 h-12 border-2 border-primary rounded-full flex items-center justify-center p-1"
+        className="w-8 h-12 border-2 border-hueneu-primary rounded-full flex items-center justify-center p-1"
         whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', stiffness: 300 }}
       >
         <motion.div
-          className="w-2 h-2 bg-primary rounded-full"
+          className="w-2 h-2 bg-hueneu-primary rounded-full"
           animate={{
             y: ["0%", "50%", "0%"],
           }}
@@ -37,7 +40,7 @@ const ScrollIndicator = () => {
           }}
         />
       </motion.div>
-      <ChevronDownIcon className="w-6 h-6 mt-2 text-primary opacity-75 group-hover:opacity-100 transition-opacity" />
+      <ChevronDownIcon className="w-6 h-6 mt-2 text-hueneu-primary opacity-75 group-hover:opacity-100 transition-opacity" />
     </motion.div>
   );
 };

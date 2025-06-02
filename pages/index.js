@@ -1,18 +1,12 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 
-// --- Structural Placeholder Components --- 
-// These are minimal placeholders for components to be implemented in future batches.
-// They are necessary for the index page to be structurally complete and to demonstrate page flow.
-// Styling (min-h-screen, bg-colors, etc.) is for temporary visualization and alignment with the theme.
-
-const HeroSection = () => <div id="hero" className="min-h-screen bg-neutral-DEFAULT flex flex-col items-center justify-center text-center p-8"><h1 className="text-4xl lg:text-6xl font-heading text-neutral-text">Hero Section</h1><p className="text-lg text-neutral-text/80 mt-4 max-w-xl">Animated hueneu logo reveal, tagline: “Where stories find their aesthetic.”, subtext: “Designs that whisper loud stories.”, and a smooth scroll-down indicator will be here.</p></div>;
-const StorySection = () => <div id="story" className="min-h-screen bg-neutral-light flex flex-col items-center justify-center text-center p-8"><h2 className="text-3xl lg:text-5xl font-heading text-neutral-text">The hueneu Story</h2><p className="text-lg text-neutral-text/80 mt-4 max-w-xl">Short section about what hueneu means. Emphasize the balance of color and calm. Bring in the “Who Knew?” moment with a fun visual pop-out or scroll-triggered element.</p></div>;
-const ServicesSection = () => <div id="services" className="min-h-screen bg-neutral-DEFAULT flex flex-col items-center justify-center text-center p-8"><h2 className="text-3xl lg:text-5xl font-heading text-neutral-text">What We Do</h2><p className="text-lg text-neutral-text/80 mt-4 max-w-xl">5-6 core offerings presented with icons or line visuals: Branding, Packaging, Social Media, Stationery, Coffee Table Books, Creative Projects. Each with a playful, single-line microcopy.</p></div>;
-const WhyHueneuSection = () => <div id="why-hueneu" className="min-h-screen bg-neutral-light flex flex-col items-center justify-center text-center p-8"><h2 className="text-3xl lg:text-5xl font-heading text-neutral-text">Why hueneu?</h2><p className="text-lg text-neutral-text/80 mt-4 max-w-xl">Emotional brand pitch in poetic copy: “We don’t just design—we decode stories.” “Designs that speak quietly but stay with you.” Highlight calm, mystery, and balance.</p></div>;
-const ContactSection = () => <div id="contact" className="min-h-screen bg-neutral-DEFAULT flex flex-col items-center justify-center text-center p-8"><h2 className="text-3xl lg:text-5xl font-heading text-neutral-text">Let’s Work Together</h2><p className="text-lg text-neutral-text/80 mt-4 max-w-xl">A contact form that feels like a note or letter. Playful CTA button copy (e.g., “Let’s design your story”). Add Instagram: @hueneu_.</p></div>;
-
-// --- End Structural Placeholder Components ---
+// Import actual components using relative paths
+import HeroSection from '../components/HeroSection';
+import StorySection from '../components/StorySection';
+import ServicesSection from '../components/ServicesSection';
+import WhyHueneuSection from '../components/WhyHueneuSection';
+import ContactSection from '../components/ContactSection';
 
 export default function HomePage() {
   const sectionVariants = {

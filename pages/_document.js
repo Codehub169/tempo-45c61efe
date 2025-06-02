@@ -8,7 +8,7 @@ export default function Document() {
         <link rel="icon" href="/favicon.ico" />
         {/* Specific font links via <link> are generally not needed when using next/font as in _app.js */}
       </Head>
-      <body className="bg-neutral-DEFAULT text-neutral-text antialiased">
+      <body className="bg-hueneu-neutral-lightest text-hueneu-neutral-dark antialiased">
         <Main />
         <NextScript />
       </body>
