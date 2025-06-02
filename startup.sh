@@ -16,4 +16,4 @@ npm run build
 
 # Start the Next.js application on port 9000
 echo "Starting the application on port 9000..."
-npm start -p 9000
+npm start
